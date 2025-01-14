@@ -1,0 +1,236 @@
+body {
+    background-color: #121212; 
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {
+    height: 100vh;
+    width: 220px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #1f1f1f;
+    padding-top: 2.5rem;
+    overflow-y: auto;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1040;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar a {
+    color: #b0b0b0;
+    display: block;
+    padding: 0.6rem 1rem;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+    position: relative;
+}
+
+.sidebar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: #00d1b2;
+    transition: width 0.3s;
+}
+
+.sidebar a:hover::after, .sidebar a.active::after {
+    width: 100%;
+}
+
+.sidebar a.active, .sidebar a:hover {
+    background-color: #343a40;
+    color: #ffffff;
+}
+
+.sidebar-header {
+    text-align: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #343a40;
+}
+
+.logout {
+    margin-bottom: 2rem;
+}
+
+.circular-img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 2px solid #00d1b2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.main-content {
+    margin-left: 220px;
+    padding: 4rem 3rem 3rem 3rem;
+    margin-top: 2.5rem;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.custom-card {
+    background-color: #1f1f1f;
+    border: 2px solid #00d1b2;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 209, 178, 0.5);
+    color: #ffffff;
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+.custom-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 30px rgba(0, 209, 178, 0.7);
+}
+
+.custom-card-header {
+    background-color: #1f1f1f;
+    border-bottom: 2px solid #00d1b2;
+    color: #00d1b2;
+    font-weight: 500;
+    padding: 0.75rem;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.custom-card-body {
+    color: #ffffff;
+}
+
+.table {
+    background-color: #2c2c2c; 
+    color: #ffffff; 
+    border-color: #444444; 
+}
+
+.table thead {
+    background-color: #1f1f1f; 
+    border-bottom: 2px solid #00d1b2;
+}
+
+.table thead th {
+    color: #ffffff; 
+    vertical-align: middle;
+    background-color: #1f1f1f; 
+}
+
+.table tbody td {
+    color: #ffffff;
+    vertical-align: middle;
+    background-color: #2c2c2c; 
+}
+
+.table tbody tr {
+    border-bottom: 1px solid #444444; 
+}
+
+.table-hover tbody tr:hover {
+    background-color: #3a3a3a; 
+}
+
+.modal-content {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    border: 2px solid #00d1b2;
+    border-radius: 12px;
+}
+
+.modal-header {
+    border-bottom: 2px solid #00d1b2;
+}
+
+.modal-title {
+    color: #00d1b2;
+}
+
+.modal-footer {
+    border-top: 2px solid #00d1b2;
+}
+
+.btn-primary {
+    background-color: #00d1b2;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #00a898;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.alert-success {
+    background-color: #00b894;
+    color: #ffffff;
+}
+
+.alert-danger {
+    background-color: #e84118;
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .main-content {
+        margin-left: 200px;
+    }
+
+    .appointments-section {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .appointments-section {
+        padding: 0.5rem;
+    }
+}
+
+.icon-dashboard {
+    color: #a67c52;
+}
+
+.icon-clients {
+    color: #6d9886;
+}
+
+.icon-attorneys {
+    color: #b4654a;
+}
+
+.icon-appointments {
+    color: #d3a588;
+}
+
+.icon-cases {
+    color: #c5b358;
+}
+
+.icon-documents {
+    color: #748cab;
+}
+
+.icon-logout {
+    color: #8b5e3c;
+}

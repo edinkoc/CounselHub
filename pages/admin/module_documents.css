@@ -1,0 +1,278 @@
+
+/* Global Styles */
+body {
+    background-color: #121212; /* Slightly lighter than pure black for better readability */
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    height: 100vh;
+    width: 220px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #1f1f1f;
+    padding-top: 2.5rem;
+    overflow-y: auto;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1040;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar a {
+    color: #b0b0b0;
+    display: block;
+    padding: 0.6rem 1rem;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+    position: relative;
+}
+
+.sidebar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: #00d1b2;
+    transition: width 0.3s;
+}
+
+.sidebar a:hover::after, .sidebar a.active::after {
+    width: 100%;
+}
+
+.sidebar a.active, .sidebar a:hover {
+    background-color: #343a40;
+    color: #ffffff;
+}
+
+.sidebar-header {
+    text-align: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #343a40;
+}
+
+.logout {
+    margin-bottom: 2rem;
+}
+
+/* Circular Image Styles */
+.circular-img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 2px solid #00d1b2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Main Content Styles */
+.main-content {
+    margin-left: 220px;
+    padding: 4rem 3rem 3rem 3rem;
+    margin-top: 2.5rem;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+/* Card Styles */
+.custom-card {
+    background-color: #1f1f1f;
+    border: 2px solid #00d1b2;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 209, 178, 0.5);
+    color: #ffffff;
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+.custom-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 30px rgba(0, 209, 178, 0.7);
+}
+
+.custom-card-header {
+    background-color: #1f1f1f;
+    border-bottom: 2px solid #00d1b2;
+    color: #00d1b2;
+    font-weight: 500;
+    padding: 0.75rem;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.custom-card-body {
+    color: #ffffff;
+}
+
+/* Fully Dark Themed Table Styles */
+.table {
+    background-color: #2c2c2c; /* Darker Grey for better contrast */
+    color: #ffffff; /* White text */
+    border-color: #444444; /* Dark borders */
+}
+
+.table thead {
+    background-color: #1f1f1f; /* Even darker for header */
+    border-bottom: 2px solid #00d1b2;
+}
+
+.table thead th {
+    color: #ffffff; /* White header text */
+    vertical-align: middle;
+    background-color: #1f1f1f; /* Ensure header cells have dark background */
+}
+
+.table tbody td {
+    color: #ffffff; /* White body text */
+    vertical-align: middle;
+    background-color: #2c2c2c; /* Ensure individual cells have dark background */
+}
+
+.table tbody tr {
+    border-bottom: 1px solid #444444; /* Dark borders between rows */
+}
+
+.table-hover tbody tr:hover {
+    background-color: #3a3a3a; /* Slightly lighter on hover */
+}
+
+/* Ensure Nested Tables Also Follow Dark Theme */
+.modal-content .table {
+    background-color: #2c2c2c; /* Same dark grey */
+    color: #ffffff;
+    border-color: #444444;
+}
+
+.modal-content .table thead {
+    background-color: #1f1f1f;
+    border-bottom: 2px solid #00d1b2;
+}
+
+.modal-content .table thead th {
+    color: #ffffff;
+    background-color: #1f1f1f; /* Ensure header cells have dark background */
+}
+
+.modal-content .table tbody td {
+    color: #ffffff;
+    background-color: #2c2c2c;
+}
+
+.modal-content .table tbody tr {
+    border-bottom: 1px solid #444444;
+}
+
+.modal-content .table-hover tbody tr:hover {
+    background-color: #3a3a3a;
+}
+
+/* Modal Styles */
+.modal-content {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    border: 2px solid #00d1b2;
+    border-radius: 12px;
+}
+
+.modal-header {
+    border-bottom: 2px solid #00d1b2;
+}
+
+.modal-title {
+    color: #00d1b2;
+}
+
+.modal-footer {
+    border-top: 2px solid #00d1b2;
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: #00d1b2;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #00a898;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* Alert Styles */
+.alert-success {
+    background-color: #00b894;
+    color: #ffffff;
+}
+
+.alert-danger { /* Corrected class from 'alert-error' to 'alert-danger' */
+    background-color: #e84118;
+    color: #ffffff;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .main-content {
+        margin-left: 200px;
+    }
+
+    .chart-container {
+        height: 150px;
+    }
+}
+
+@media (max-width: 576px) {
+    .chart-container {
+        height: 200px;
+    }
+}
+
+/* Icon Colors */
+.icon-dashboard {
+    color: #a67c52;
+}
+
+.icon-clients {
+    color: #6d9886;
+}
+
+.icon-attorneys {
+    color: #b4654a;
+}
+
+.icon-appointments {
+    color: #d3a588;
+}
+
+.icon-cases {
+    color: #c5b358;
+}
+
+.icon-documents {
+    color: #748cab;
+}
+
+.icon-logout {
+    color: #8b5e3c;
+}
