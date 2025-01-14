@@ -1,0 +1,265 @@
+:root {
+    --primary-color: #EFE6D9;
+    --secondary-color: #4E342E;
+    --accent-color: #6D4C41; 
+    --text-color: #3E2723;
+    --hover-color: #795548; 
+    --shadow-color: rgba(0, 0, 0, 0.2); 
+    --header-height: 100px;
+    --topbar-height: 40px;
+    --font-family-primary: 'Montserrat', sans-serif;
+    --font-family-secondary: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: var(--font-family-secondary);
+    background-color: #F5F5F5;
+    padding-top: calc(var(--header-height) + var(--topbar-height)); 
+    overflow-x: hidden;
+}
+
+.top-bar {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    height: var(--topbar-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1001; 
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    padding: 15px 30px;
+    position: fixed;
+    width: 100%;
+    top: var(--topbar-height);
+    z-index: 1000;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: var(--secondary-color);
+    box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.navbar .logo {
+    color: var(--text-color);
+    font-family: var(--font-family-primary);
+    font-size: 28px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.navbar.scrolled .logo {
+    color: var(--primary-color);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    flex: 0.85; 
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 18px;
+    font-family: var(--font-family-secondary);
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar.scrolled ul li a {
+    color: var(--primary-color);
+}
+
+.navbar ul li a:hover {
+    color: var(--hover-color);
+    transform: scale(1.05);
+}
+
+.navbar ul li.logout a {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.navbar.scrolled ul li.logout a {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.navbar ul li.logout a:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.05);
+}
+
+.hamburger {
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    display: none; 
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1002; 
+}
+
+.hamburger .bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: #E6DCC8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.5s ease;
+    z-index: 999;
+}
+
+.nav-overlay.active {
+    left: 0;
+}
+
+.nav-overlay h2 {
+    color: var(--text-color);
+    font-family: var(--font-family-primary);
+    font-size: 32px;
+    margin-bottom: 40px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.nav-overlay ul {
+    list-style: none;
+    text-align: center;
+}
+
+.nav-overlay ul li {
+    margin: 20px 0;
+}
+
+.nav-overlay ul li.logout a {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.nav-overlay ul li.logout a:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.05);
+}
+
+.nav-overlay ul li a {
+    color: var(--text-color);
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.nav-overlay ul li a:hover {
+    color: var(--hover-color);
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    z-index: 1003;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.close-btn .close-line {
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: var(--text-color);
+    top: 13px;
+    left: 0;
+    transform: rotate(45deg);
+    transition: background 0.5s ease, transform 0.3s ease;
+}
+
+.close-btn .close-line::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: var(--text-color);
+    top: 0;
+    left: 0;
+    transform: rotate(-90deg);
+    transition: background 0.5s ease, transform 0.3s ease;
+}
+
+.close-btn:hover .close-line,
+.close-btn:hover .close-line::before {
+    background: var(--hover-color);
+    transform: rotate(45deg) scale(1.1); 
+}
+
+@media (max-width: 768px) {
+    .navbar ul {
+        display: none; 
+    }
+
+    .hamburger { 
+        display: flex;
+    }
+}
+
+@media (min-width: 769px) {
+    .nav-overlay {
+        left: 100%;
+    }
+}
