@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.filter-summary {
+    background: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #333;
+}
+
+.filter-summary span {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.attorney-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.attorney-card {
+    display: flex;
+    box-sizing: border-box;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+    text-align: center;
+    max-width: 300px;
+}
+
+.attorney-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.attorney-card p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.attorney-card .availability {
+    font-weight: bold;
+    color: green;
+}
+
+.attorney-card .availability.not-available {
+    color: red;
+}
+
+.filter-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filter-form {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.filter-form.active {
+    display: block;
+}
+
+.filter-form select, .filter-form button {
+    width: 100%;
+    margin-bottom: 10px;
+}
